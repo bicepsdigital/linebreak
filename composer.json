@@ -1,0 +1,25 @@
+{
+  "name": "bicepsdigital/linebreak",
+  "keywords": [
+    "czech",
+    "preposition",
+    "linebreak"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tomas Lysek",
+      "email": "tomas@bicepsdigital.com",
+      "homepage": "http://www.bicepsdigital.com",
+      "role": "Developer"
+    }
+  ],
+  "require-dev": {
+    "bicepsdigital/bicepstest": "^1.1"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+}
