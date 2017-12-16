@@ -3,7 +3,9 @@
   "keywords": [
     "czech",
     "preposition",
-    "linebreak"
+    "end-of-the-line",
+    "linebreak",
+    "nbsp"
   ],
   "license": "MIT",
   "authors": [
