@@ -13,30 +13,29 @@ use BicepsDigital\Test\TestCase;
 
 class NumberTest extends TestCase {
 
-    public function testDefaultProperties() {
-        $randomString = '12';
-        $word = new Number($randomString);
-        self::assertEquals($randomString, $word->text);
-        self::assertEquals('number', $word->type);
-    }
+	public function testDefaultProperties() {
+		$randomString = '12';
+		$word         = new Number( $randomString );
+		self::assertEquals( $randomString, $word->text );
+		self::assertEquals( 'number', $word->type );
+	}
 
-    public function testNumberWithBracket() {
-        $this->assertIsNumber('(123');
-        $this->assertIsNumber('123)');
-    }
+	public function testNumberWithBracket() {
+		$this->assertIsNumber( '(123' );
+		$this->assertIsNumber( '123)' );
+	}
 
-    public function testNumberWithDash() {
-        $this->assertIsNumber('9.-15.');
-        $this->assertIsNumber('9.–15.');
-        $this->assertIsNumber('9.&ndash;15.');
-    }
+	public function testNumberWithDash() {
+		$this->assertIsNumber( '9.-15.' );
+		$this->assertIsNumber( '9.–15.' );
+		$this->assertIsNumber( '9.&ndash;15.' );
+	}
 
-    /**
-     * @param $number
-     */
-    protected function assertIsNumber($number) {
-        $this->assertTrue(Number::isType($number), 'is not number');
-    }
-
+	/**
+	 * @param $number
+	 */
+	protected function assertIsNumber( $number ) {
+		$this->assertTrue( Number::isType( $number ), 'is not number' );
+	}
 
 }

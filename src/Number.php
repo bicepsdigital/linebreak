@@ -29,7 +29,7 @@ class Number extends Word {
 	protected static function stripCommonlyUsedCharacters( $text ) {
 		$stringsToRemove = array( '(', ')', '-', '.', '&ndash;', '–' );
 
-		if ( !self::lastCharIsComma( $text) ) {
+		if ( ! self::lastCharIsComma( $text ) ) {
 			$stringsToRemove[] = ',';
 		}
 

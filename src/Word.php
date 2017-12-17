@@ -2,28 +2,29 @@
 
 namespace BicepsDigital\LineBreak;
 
-
 class Word {
-    const CODE = 'word';
 
-    public $text;
-    public $type = self::CODE;
+	const CODE = 'word';
 
-    public function __construct($text) {
-        $this->text = $text;
-    }
+	public $text;
+	public $type = self::CODE;
 
-    /**
-     *
-     * @param Word|null $nextWord
-     * @return bool
-     */
-    public function isNonBreakableWith(Word $nextWord = null){
-        return false;
-    }
+	public function __construct( $text ) {
+		$this->text = $text;
+	}
 
-    public static function isType($text) {
-        return true;
-    }
+	/**
+	 *
+	 * @param Word|null $nextWord
+	 *
+	 * @return bool
+	 */
+	public function isNonBreakableWith( Word $nextWord = null ) {
+		return false;
+	}
+
+	public static function isType( $text ) {
+		return true;
+	}
 
 }

@@ -2,55 +2,60 @@
 
 namespace BicepsDigital\LineBreak;
 
-
 class WordFactory {
 
-    /**
-     * @param $text
-     * @return array
-     */
-    public static function createWords($text) {
+	/**
+	 * @param $text
+	 *
+	 * @return array
+	 */
+	public static function createWords( $text ) {
 
-        $words = self::getWords($text);
-        return self::createClassWords($words);
-    }
+		$words = self::getWords( $text );
 
-    /**
-     * @param $text
-     * @return array
-     */
-    protected static function getWords($text) {
-        $words = explode(' ', $text);
-        return $words;
-    }
+		return self::createClassWords( $words );
+	}
 
-    /**
-     * @param $words
-     * @return array
-     */
-    protected static function createClassWords($words) {
-        $classWords = array();
+	/**
+	 * @param $text
+	 *
+	 * @return array
+	 */
+	protected static function getWords( $text ) {
+		$words = explode( ' ', $text );
 
-        foreach ($words as $string) {
-            $classWords[] = self::getWordInstance($string);
-        }
+		return $words;
+	}
 
-        return $classWords;
-    }
+	/**
+	 * @param $words
+	 *
+	 * @return array
+	 */
+	protected static function createClassWords( $words ) {
+		$classWords = array();
 
-    /**
-     * @param $text
-     * @return Word
-     */
-    public static function getWordInstance($text) {
+		foreach ( $words as $string ) {
+			$classWords[] = self::getWordInstance( $string );
+		}
 
-        if (Preposition::isType($text)) {
-            return new Preposition($text);
-        } elseif (Number::isType($text)) {
-            return new Number($text);
-        } else {
-            return new Word($text);
-        }
-    }
+		return $classWords;
+	}
+
+	/**
+	 * @param $text
+	 *
+	 * @return Word
+	 */
+	public static function getWordInstance( $text ) {
+
+		if ( Preposition::isType( $text ) ) {
+			return new Preposition( $text );
+		} elseif ( Number::isType( $text ) ) {
+			return new Number( $text );
+		} else {
+			return new Word( $text );
+		}
+	}
 
 }
