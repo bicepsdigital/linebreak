@@ -55,8 +55,14 @@ class LineBreakUJCTest extends TestCase {
 		$this->assertLineBreak( '19&nbsp;°C', '19 °C' );
 		$this->assertLineBreak( '1&nbsp;000&nbsp;000&nbsp;Kč', '1 000 000 Kč' );
 		$this->assertLineBreak( '250&nbsp;€', '250 €' );
-
 	}
-	
+
+	public function testNumberAndWord() {
+		$this->assertLineBreak( '500&nbsp;lidí', '500 lidí' );
+		$this->assertLineBreak( '365&nbsp;dní', '365 dní' );
+		$this->assertLineBreak( '5.&nbsp;pluk', '5. pluk' );
+		$this->assertLineBreak( '8.&nbsp;kapitola', '8. kapitola' );
+	}
+
 
 }
