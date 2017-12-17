@@ -2,9 +2,9 @@
 
 namespace BicepsDigital\LineBreak;
 
-class Mark extends Word {
+class BeforeNumber extends Word {
 
-	const CODE = 'mark';
+	const CODE = 'beforeNumber';
 
 	public $type = self::CODE;
 
@@ -13,6 +13,10 @@ class Mark extends Word {
 		'#',
 		'*',
 		'†',
+		's.',
+		'č.',
+		'obr.',
+		'tab.'
 	);
 
 	static $nonBreakableWith = array(

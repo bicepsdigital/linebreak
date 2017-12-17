@@ -42,4 +42,21 @@ class LineBreakUJCTest extends TestCase {
 		$this->assertLineBreak( '§&nbsp;23 #&nbsp;26 *&nbsp;1921 †&nbsp;2000', '§ 23 # 26 * 1921 † 2000' );
 	}
 
+	public function testNumberMark() {
+		$this->assertLineBreak( '5&nbsp;str.', '5 str.' );
+		$this->assertLineBreak( '8&nbsp;hod.', '8 hod.' );
+		$this->assertLineBreak( 's.&nbsp;53', 's. 53' );
+		$this->assertLineBreak( 'č.&nbsp;9', 'č. 9' );
+		$this->assertLineBreak( 'obr.&nbsp;1', 'obr. 1' );
+		$this->assertLineBreak( 'tab.&nbsp;3', 'tab. 3' );
+		$this->assertLineBreak( '100&nbsp;m²', '100 m²' );
+		$this->assertLineBreak( '10&nbsp;kg', '10 kg' );
+		$this->assertLineBreak( '16&nbsp;h', '16 h' );
+		$this->assertLineBreak( '19&nbsp;°C', '19 °C' );
+		$this->assertLineBreak( '1&nbsp;000&nbsp;000&nbsp;Kč', '1 000 000 Kč' );
+		$this->assertLineBreak( '250&nbsp;€', '250 €' );
+
+	}
+	
+
 }

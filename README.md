@@ -22,6 +22,7 @@ Snaha o implementování  funkcionality z [1].
 + ve spojení slabičných předložek o, u a spojek a, i s výrazem, který po nich následuje, např. u babičky, o páté,
 + pro členění čísel, např. 2 500, 1 000 000, 25,325 23,
 + mezi číslem a značkou, např. 50 %, § 23, # 26, * 1921, † 2000,
++ mezi číslem a zkratkou počítaného předmětu nebo písmennou značkou jednotek a měn, např. 5 str., 8 hod., s. 53, č. 9, obr. 1, tab. 3, 100 m², 10 kg, 16 h, 19 °C, 1 000 000 Kč, 250 €,
 
 
 ## Instalace pomocí composeru

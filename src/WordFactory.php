@@ -49,13 +49,13 @@ class WordFactory {
 	 */
 	public static function getWordInstance( $text ) {
 
-		if ( Preposition::isType( $text ) ) {
+		if ( BeforeNumber::isType( $text ) ) {
+			return new BeforeNumber( $text );
+		}else if ( Preposition::isType( $text ) ) {
 			return new Preposition( $text );
 		} elseif ( Number::isType( $text ) ) {
 			return new Number( $text );
-		} else if ( Mark::isType( $text ) ) {
-			return new Mark( $text );
-		} else {
+		} else  {
 			return new Word( $text );
 		}
 	}

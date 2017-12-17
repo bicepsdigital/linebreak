@@ -8,19 +8,19 @@
 
 namespace Tests;
 
-use BicepsDigital\LineBreak\Mark;
+use BicepsDigital\LineBreak\BeforeNumber;
 use BicepsDigital\LineBreak\Number;
 use BicepsDigital\LineBreak\Word;
 use BicepsDigital\Test\StringUtils;
 use BicepsDigital\Test\TestCase;
 
-class MarkTest extends TestCase {
+class BeforeNumberTest extends TestCase {
 
 	public function testDefaultProperties() {
 		$randomString = 's';
-		$word         = new Mark( $randomString );
+		$word         = new BeforeNumber( $randomString );
 		self::assertEquals( $randomString, $word->text );
-		self::assertEquals( 'mark', $word->type );
+		self::assertEquals( 'beforeNumber', $word->type );
 	}
 
 	public function testHasAllPrepositionsSaved() {
@@ -29,19 +29,23 @@ class MarkTest extends TestCase {
 			'#',
 			'*',
 			'†',
+			's.',
+			'č.',
+			'obr.',
+			'tab.'
 		);
-		$this->assertArrayEql( $mustHaveThisPreposition, Mark::$lexems );
+		$this->assertArrayEql( $mustHaveThisPreposition, BeforeNumber::$lexems );
 	}
 
 	public function testIsWordTypeWillReturnTrueOnMark() {
-		foreach ( Mark::$lexems as $lexem ) {
-			$this->assertTrue( Mark::isType( $lexem ) );
+		foreach ( BeforeNumber::$lexems as $lexem ) {
+			$this->assertTrue( BeforeNumber::isType( $lexem ) );
 		}
 	}
 
 	public function testIsWordTypeWillReturnFalseOnEverythingElse() {
 		for ( $i = 0; $i < 10; $i ++ ) {
-			$this->assertFalse( Mark::isType( StringUtils::random() ) );
+			$this->assertFalse( BeforeNumber::isType( StringUtils::random() ) );
 		}
 	}
 
@@ -50,7 +54,7 @@ class MarkTest extends TestCase {
 			Number::CODE
 		);
 
-		$mark = new Mark( '#' );
+		$mark = new BeforeNumber( '#' );
 		$dummyNumber   = new Number( '1000' );
 
 		foreach ( $isNonBreakableWithTypes as $type ) {
