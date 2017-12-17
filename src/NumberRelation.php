@@ -2,20 +2,19 @@
 
 namespace BicepsDigital\LineBreak;
 
-class BeforeNumber extends Word {
+class NumberRelation extends Word {
 
-	const CODE = 'beforeNumber';
+	const CODE = 'numberRelation';
 
 	public $type = self::CODE;
 
 	static $lexems = array(
-		'§',
-		'#',
-		'†',
-		's.',
-		'č.',
-		'obr.',
-		'tab.'
+		':',
+		'+',
+		'*',
+		'/',
+		'=',
+		'-',
 	);
 
 	static $nonBreakableWith = array(
@@ -29,5 +28,4 @@ class BeforeNumber extends Word {
 	public static function isType( $text ) {
 		return self::isTypeInArray( $text, self::$lexems );
 	}
-
 }

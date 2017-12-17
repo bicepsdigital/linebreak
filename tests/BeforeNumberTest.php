@@ -11,6 +11,7 @@ namespace Tests;
 use BicepsDigital\LineBreak\BeforeNumber;
 use BicepsDigital\LineBreak\Number;
 use BicepsDigital\LineBreak\Word;
+use BicepsDigital\LineBreak\WordFactory;
 use BicepsDigital\Test\StringUtils;
 use BicepsDigital\Test\TestCase;
 
@@ -27,7 +28,6 @@ class BeforeNumberTest extends TestCase {
 		$mustHaveThisPreposition = array(
 			'§',
 			'#',
-			'*',
 			'†',
 			's.',
 			'č.',
@@ -54,8 +54,8 @@ class BeforeNumberTest extends TestCase {
 			Number::CODE
 		);
 
-		$mark = new BeforeNumber( '#' );
-		$dummyNumber   = new Number( '1000' );
+		$mark        = new BeforeNumber( '#' );
+		$dummyNumber = new Number( '1000' );
 
 		foreach ( $isNonBreakableWithTypes as $type ) {
 			$dummyNumber->type = $type;
@@ -63,7 +63,10 @@ class BeforeNumberTest extends TestCase {
 		}
 	}
 
-
-
+	public function testBeforeNumberFactory() {
+		foreach ( BeforeNumber::$lexems as $lexem ) {
+			self::assertInstanceOf( BeforeNumber::class, WordFactory::getWordInstance( $lexem ) );
+		}
+	}
 
 }

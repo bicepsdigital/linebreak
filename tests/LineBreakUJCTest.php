@@ -39,7 +39,7 @@ class LineBreakUJCTest extends TestCase {
 	}
 
 	public function testNumberAndBrandBefore() {
-		$this->assertLineBreak( '§&nbsp;23 #&nbsp;26 *&nbsp;1921 †&nbsp;2000', '§ 23 # 26 * 1921 † 2000' );
+		$this->assertLineBreak( '§&nbsp;23 #&nbsp;26 †&nbsp;2000', '§ 23 # 26 † 2000' );
 	}
 
 	public function testNumberMark() {
@@ -68,6 +68,16 @@ class LineBreakUJCTest extends TestCase {
 		// v kalendářních datech mezi dnem a měsícem, rok však lze oddělit, např. 21. 6. | 2013, 16. ledna | 1972,
 		$this->assertLineBreak( '21.&nbsp;června', '21. června' );
 		$this->assertLineBreak( '21.&nbsp;6.', '21. 6.' );
+	}
+
+	public function testNumberRelation() {
+		$this->assertLineBreak( '5&nbsp;*&nbsp;5&nbsp;=&nbsp;25', '5 * 5 = 25' );
+		$this->assertLineBreak( '5&nbsp;*&nbsp;5', '5 * 5' );
+		$this->assertLineBreak( '5&nbsp;+&nbsp;5', '5 + 5' );
+		$this->assertLineBreak( '5&nbsp;/&nbsp;5', '5 / 5' );
+		$this->assertLineBreak( '5&nbsp;-&nbsp;5', '5 - 5' );
+		$this->assertLineBreak( '1&nbsp;:&nbsp;50&nbsp;000', '1 : 50 000' );
+		$this->assertLineBreak( '5&nbsp;:&nbsp;3', '5&nbsp;:&nbsp;3' );
 	}
 
 }

@@ -3,6 +3,7 @@
 namespace Tests;
 
 use BicepsDigital\LineBreak\Number;
+use BicepsDigital\LineBreak\NumberRelation;
 use BicepsDigital\LineBreak\Preposition;
 use BicepsDigital\LineBreak\Word;
 use BicepsDigital\LineBreak\WordFactory;

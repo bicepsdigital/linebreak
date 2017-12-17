@@ -10,7 +10,8 @@ class Number extends Word {
 
 	static $nonBreakableWith = array(
 		Number::CODE,
-		Word::CODE
+		Word::CODE,
+		NumberRelation::CODE
 	);
 
 
