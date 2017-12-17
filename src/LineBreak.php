@@ -9,10 +9,13 @@ class LineBreak {
 	const SYMBOL_SPACE = "\x20";
 
 	public static function parse( $text ) {
-		$text  = self::keepOnlySpaceAsWhiteSpace( $text );
-		$words = WordFactory::createWords( $text );
+		$text         = self::keepOnlySpaceAsWhiteSpace( $text );
+		$words        = WordFactory::createWords( $text );
+		$filteredText = self::joinWords( $words );
 
-		return self::joinWords( $words );
+		$filteredText = Abbreviations::parse( $filteredText );
+
+		return $filteredText;
 	}
 
 	/**

@@ -80,4 +80,19 @@ class LineBreakUJCTest extends TestCase {
 		$this->assertLineBreak( '5&nbsp;:&nbsp;3', '5&nbsp;:&nbsp;3' );
 	}
 
+	public function testPhoneNumber() {
+		$this->assertLineBreak( '+420&nbsp;800&nbsp;123&nbsp;987', '+420 800 123 987' );
+		$this->assertLineBreak( '723&nbsp;456&nbsp;789', '723 456 789' );
+		$this->assertLineBreak( '800&nbsp;11&nbsp;22&nbsp;33', '800 11 22 33' );
+	}
+
+	public function testAbbreviations() {
+		// ve složených zkratkách, v ustálených spojeních a v různých kódech, např. a. s., s. r. o., mn. č., př. n. l.,
+		$this->assertLineBreak( 'Firma a.&nbsp;s.', 'Firma a. s.' );
+		$this->assertLineBreak( 'Firma s.&nbsp;r.&nbsp;o.', 'Firma s. r. o.' );
+		$this->assertLineBreak( 'Použijte mn.&nbsp;č.', 'Použijte mn. č.' );
+		$this->assertLineBreak( 'v&nbsp;roce 300&nbsp;př.&nbsp;n.&nbsp;l.', 'v roce 300 př. n. l.' );
+	}
+	
+
 }
