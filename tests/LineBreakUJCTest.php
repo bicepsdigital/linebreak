@@ -64,5 +64,10 @@ class LineBreakUJCTest extends TestCase {
 		$this->assertLineBreak( '8.&nbsp;kapitola', '8. kapitola' );
 	}
 
+	public function testDates() {
+		// v kalendářních datech mezi dnem a měsícem, rok však lze oddělit, např. 21. 6. | 2013, 16. ledna | 1972,
+		$this->assertLineBreak( '21.&nbsp;června', '21. června' );
+		$this->assertLineBreak( '21.&nbsp;6.', '21. 6.' );
+	}
 
 }
