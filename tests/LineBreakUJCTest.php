@@ -93,6 +93,25 @@ class LineBreakUJCTest extends TestCase {
 		$this->assertLineBreak( 'Použijte mn.&nbsp;č.', 'Použijte mn. č.' );
 		$this->assertLineBreak( 'v&nbsp;roce 300&nbsp;př.&nbsp;n.&nbsp;l.', 'v roce 300 př. n. l.' );
 	}
-	
+
+	public function testAbbrevationsPreposition() {
+		$this->assertLineBreak( 'tj.&nbsp;jiné', 'tj. jiné' );
+		$this->assertLineBreak( 'tzn.&nbsp;jiné', 'tzn. jiné' );
+	}
+
+	public function testAbbreavationShortName() {
+		$this->assertLineBreak( 'T.&nbsp;Přijmení', 'T. Přijmení' );
+		$this->assertLineBreak( 'Fr.&nbsp;Přijmení', 'Fr. Přijmení' );
+		$this->assertLineBreak( 'M.&nbsp;Přijmení', 'M. Přijmení' );
+	}
+
+	public function testTitle() {
+		$this->assertLineBreak( 'Ing.&nbsp;Přijmení', 'Ing. Přijmení' );
+		$this->assertLineBreak( 'Bc.&nbsp;Přijmení', 'Bc. Přijmení' );
+		$this->assertLineBreak( 'Mgr.&nbsp;Přijmení', 'Mgr. Přijmení' );
+		$this->assertLineBreak( 'p.&nbsp;Přijmení', 'p. Přijmení' );
+		$this->assertLineBreak( 'mjr.&nbsp;Přijmení', 'mjr. Přijmení' );
+	}
+
 
 }

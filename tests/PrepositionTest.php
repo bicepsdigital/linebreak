@@ -31,7 +31,17 @@ class PrepositionTest extends TestCase {
 			'o',
 			'u',
 			'a',
-			'i'
+			'i',
+			'tj.',
+			'tzn.',
+			't.',
+			'fr.',
+			'm.',
+			'ing.',
+			'bc.',
+			'mgr.',
+			'p.',
+			'mjr.',
 		);
 		$this->assertArrayEql( $mustHaveThisPreposition, Preposition::$lexems );
 	}

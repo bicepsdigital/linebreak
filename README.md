@@ -28,7 +28,9 @@ Snaha o implementování  funkcionality z [1].
 + v měřítkách map, plánů a výkresů, v poměrech nebo při naznačení dělení, např. mapa v měřítku 1 : 50 000, poměr hlasů 5 : 3, 10 : 2 = 5,
 + v telefonních, faxových a jiných zvláštních číslech členěných mezerou, např. +420 800 123 987, 723 456 789, 800 11 22 33,
 + ve složených zkratkách, v ustálených spojeních a v různých kódech, např. a. s., s. r. o., mn. č., př. n. l.,
-
++ mezi zkratkami typu tj., tzv., tzn. a výrazem, který za nimi bezprostředně následuje, např. tzv. klikání,
++ mezi zkratkami rodných jmen a příjmeními, např. Fr. Daneš, M. Těšitelová – připouští se však oddělit příjmení od vypsaného jména, např. František | Daneš, Marie | Těšitelová,
++ mezi zkratkou titulu nebo hodnosti uváděnou před osobním jménem, např. p. Čečetková, mjr. Veselý, Ing. Poliaková – lze však oddělit titul a rodné jméno od příjmení, např. Ing. Ivana | Poliaková.
 
 ## Přidání zkratek
 Není možné získat seznam všech zkratek použivaných v českém jazyce (některé jsou specifické pro uričtou doménu), proto je přidána funkce ``` Abbreviations::addAbbreviation ```, kde v parametru se předá pole, kde klíč je nahrazovaná zkratka a hodnota nahrazená zkratka, např::

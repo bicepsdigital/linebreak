@@ -16,7 +16,17 @@ class Preposition extends Word {
 		'o',
 		'u',
 		'a',
-		'i'
+		'i',
+		'tj.',
+		'tzn.',
+		't.',
+		'fr.',
+		'm.',
+		'ing.',
+		'bc.',
+		'mgr.',
+		'p.',
+		'mjr.',
 	);
 
 	static $nonBreakableWith = array(
