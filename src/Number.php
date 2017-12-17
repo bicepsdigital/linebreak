@@ -8,6 +8,12 @@ class Number extends Word {
 
 	public $type = self::CODE;
 
+	static $nonBreakableWith = array(
+		Number::CODE,
+		Word::CODE
+	);
+
+
 	/**
 	 * @param $text
 	 *
@@ -18,7 +24,7 @@ class Number extends Word {
 	}
 
 	public function isNonBreakableWith( Word $nextWord = null ) {
-		return true;
+		return $this->isNonBreakableByArray( $nextWord->type, self::$nonBreakableWith );
 	}
 
 	/**

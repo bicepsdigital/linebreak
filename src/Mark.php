@@ -2,25 +2,21 @@
 
 namespace BicepsDigital\LineBreak;
 
-class Preposition extends Word {
+class Mark extends Word {
 
-	const CODE = 'preposition';
+	const CODE = 'mark';
 
 	public $type = self::CODE;
 
 	static $lexems = array(
-		'k',
-		's',
-		'z',
-		'v',
-		'o',
-		'u',
-		'a',
-		'i'
+		'§',
+		'#',
+		'*',
+		'†',
 	);
 
 	static $nonBreakableWith = array(
-		Word::CODE
+		Number::CODE
 	);
 
 	public function isNonBreakableWith( Word $nextWord = null ) {
@@ -28,8 +24,6 @@ class Preposition extends Word {
 	}
 
 	public static function isType( $text ) {
-
-		$text = strtolower( $text );
 		return self::isTypeInArray( $text, self::$lexems );
 	}
 

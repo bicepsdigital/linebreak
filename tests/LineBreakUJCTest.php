@@ -34,4 +34,12 @@ class LineBreakUJCTest extends TestCase {
 		$this->assertLineBreak( '2&nbsp;500, 1&nbsp;000&nbsp;000, 25,325&nbsp;23', '2 500, 1 000 000, 25,325 23' );
 	}
 
+	public function testNumberAndBrandAfter() {
+		$this->assertLineBreak( '50&nbsp;%', '50 %' );
+	}
+
+	public function testNumberAndBrandBefore() {
+		$this->assertLineBreak( '§&nbsp;23 #&nbsp;26 *&nbsp;1921 †&nbsp;2000', '§ 23 # 26 * 1921 † 2000' );
+	}
+
 }

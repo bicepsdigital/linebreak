@@ -15,12 +15,13 @@ LineBreak::parse("Proti švédským hokejistům bude chytat v sobotu Furch");
 
 Vrátí: ```"Proti švédským hokejistům bude chytat v&nbsp;sobotu Furch"```
 
-Snaha o implementování  funkcionality z [Zalomení řádků a nevhodné výrazy na jejich konci](http://prirucka.ujc.cas.cz/?id=880)
+Snaha o implementování  funkcionality z [1].
 
-## Implementovaná funkcionalita
-+ Nedělitelné mezery se vkládají za předložky: k, s, z, v, o, u, a, i
-+ Za číslem se vždy vkládá nedělitelná mezera
-
+## Implementovaná funkcionalita [1]
++ ve spojení neslabičných předložek k, s, v, z s následujícím slovem, např. k mostu, s bratrem, v Plzni, z nádraží,
++ ve spojení slabičných předložek o, u a spojek a, i s výrazem, který po nich následuje, např. u babičky, o páté,
++ pro členění čísel, např. 2 500, 1 000 000, 25,325 23,
++ mezi číslem a značkou, např. 50 %, § 23, # 26, * 1921, † 2000,
 
 
 ## Instalace pomocí composeru
@@ -30,3 +31,6 @@ composer require bicepsdigital/linebreak
 ```
 
 (pokud nechcete použít composer, stačí stáhnout repozitář a na všechny soubory v složce src udělat include)
+
+## Zdroje
++ [1] [Zalomení řádků a nevhodné výrazy na jejich konci](http://prirucka.ujc.cas.cz/?id=880)

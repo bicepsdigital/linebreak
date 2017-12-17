@@ -53,6 +53,8 @@ class WordFactory {
 			return new Preposition( $text );
 		} elseif ( Number::isType( $text ) ) {
 			return new Number( $text );
+		} else if ( Mark::isType( $text ) ) {
+			return new Mark( $text );
 		} else {
 			return new Word( $text );
 		}

@@ -27,4 +27,32 @@ class Word {
 		return true;
 	}
 
+	/**
+	 * @param $nextWordType
+	 * @param $nonBreakableTypesArray
+	 *
+	 * @return bool
+	 */
+	protected function isNonBreakableByArray( $nextWordType, $nonBreakableTypesArray ) {
+		if ( in_array( $nextWordType, $nonBreakableTypesArray ) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * @param $text
+	 * @param $lexems
+	 *
+	 * @return bool
+	 */
+	protected static function isTypeInArray( $text, $lexems ) {
+		if ( in_array( $text, $lexems ) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
